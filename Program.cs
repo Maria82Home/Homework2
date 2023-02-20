@@ -20,13 +20,30 @@ else
 
 //Task2.  Напишите программу, которая выводит третью цифру заданного числа 
 //или сообщает, что третьей цифры нет.
-
+/*
 void ThirdNumber(int givenNumber)
-{
-  int result = (givenNumber /100)%10;
-  if (result == 0){Console.WriteLine("No such number");}
-  else {Console.WriteLine($"The third number is {result}");};
+{  
+  while(givenNumber>=1000){givenNumber=givenNumber/10;};
+  if (givenNumber < 100){Console.WriteLine("No such number");}
+  else {Console.WriteLine($"The third number is {givenNumber%10}");}
 }
-Console.Write("Input numbere: ");
+Console.Write("Input number: ");
 int numbertowork=Convert.ToInt32(Console.ReadLine());
 ThirdNumber(numbertowork);
+*/
+
+//Task3. Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
+//и проверяет, является ли этот день выходным.
+
+bool WhatWeekDay(int daynumber)
+{
+ return(daynumber==6|daynumber==7);
+}
+
+Console.Write("Input number of the weekday: ");
+int dayfromuser=Convert.ToInt32(Console.ReadLine());
+//Console.Write(dayfromuser);
+if(dayfromuser<1|dayfromuser>7){Console.WriteLine("Number must be from 1 to 7");}
+else {if(WhatWeekDay(dayfromuser)){Console.WriteLine("It's a weekend!!!");}
+else {Console.WriteLine("It's not a weekend");};
+}
